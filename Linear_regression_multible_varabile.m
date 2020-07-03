@@ -4,3 +4,8 @@ AdminiSpend=str2double(dat.textdata(2:end,2));
 MarketingSpend=str2double(dat.textdata(2:end,3));
 SpendState = dat.textdata(2:end,4);
 Profit = dat.data();
+SpendState(find(SpendState=='Florida'))=2;
+SpendState(find(SpendState=='California'))=1;
+SpendState(find(SpendState=='New York'))=3;
+SpendState=str2double(string(SpendState));
+Profit=dat.data();
