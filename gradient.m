@@ -1,9 +1,14 @@
-function [theta,j_history] = gradient(X,y,theta,alpha,num_iterations)
-    j_history=ones(num_iterations,1);
+function [theta,j_history] =gradient(X,y,theta,alpha,num_iter,lambda)
+    
     m=length(y);
-    X=[ones(m,1),X];
-    for i=1:num_iterations
-        theta=theta-((alpha/m)*(((X*theta)-y)'*X))';
-        j_history(i)=costfunction(X,y,theta);
-    end 
+    j_history=ones(num_iter,1);
+    for i=1:num_iter
+        [cost,grad]=costFunction(X,y,theta,lambda);
+        theta=theta-((alpha/m)*(grad));
+        j_history(i)=cost;
+        
+    end
+    
+    
+    
 end
