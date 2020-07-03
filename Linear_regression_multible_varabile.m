@@ -1,7 +1,11 @@
 [X,y]=loadData();
-[X,mue,sigma]=featureNormalization(X);
+[X,mean,std]=Normalize(X);
 theta=zeros(size(X,2)+1,1);
+num_iter=100000;
+alpha=0.001;
 lambda=0;
-[J,grad]=costFunction(X,y,theta,lambda);
-options=optimset('MaxIter',50,'GradObj','on');
-[theta,cost] =fminunc(@(t) costFunction(X,y,theta,lambda),theta,options);
+%[J,grad]=costFunction(X,y,theta,lambda,num_iter);
+[theta,j_history] =gradient(X,y,theta,alpha,num_iter,lambda);
+%options=optimset('MaxIter',50,'GradObj','on');
+%[theta,cost] =fminunc(@(t) costFunction(X,y,theta,lambda),theta,options);
+plot(1:num_iter,j_history);
