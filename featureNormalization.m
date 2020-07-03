@@ -5,5 +5,5 @@ function X = featureNormalization(X)
     
  mu=mean(X);
  Std=std(X);
- X=(X-mu)/Std;
+ X=rdivide(minus(X,mu),Std);
 end
