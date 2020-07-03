@@ -5,6 +5,6 @@ function [X_norm,mu,sigma] = featureNormalization(X)
     
  mu = mean(X);
  sigma = std(X);
- X_norm = rdivide(minus(X,mu),Std);
+ X_norm = rdivide(minus(X,mu),sigma);
  
 end
