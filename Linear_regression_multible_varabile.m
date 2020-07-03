@@ -1,2 +1,2 @@
 [X,y]=loadData();
-[X,mean,std]=featureNormalization(X);
+[X,mue,sigma]=featureNormalization(X);
