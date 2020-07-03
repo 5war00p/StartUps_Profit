@@ -1,5 +1,5 @@
 function [J,grad] =costFunction(X,y,theta,lambda);
-    m=size(y);
+    m=length(y);
     X=[ones(m,1) X];
     h=X*theta;
     J= (1/(2*m))*(sum((h-y).^2));
