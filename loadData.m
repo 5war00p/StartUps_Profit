@@ -16,3 +16,4 @@ function [X,y]=loadData()
   X = [RDSpend AdminSpend MarketingSpend SpendState];
   y = Profit;
   
+end
