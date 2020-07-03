@@ -3,9 +3,7 @@ function X = featureNormalization(X)
     % Normalizes all features in X and return same X
     % Detailed explanation goes here
     
-    for i = 1:size(X,2)
-        mue = mean(X(:,i));
-        sigma = std(X(:,i));        
-        X(:,i) = (X(:,i) - mue) / sigma;
-    end
+ mu=mean(X);
+ Std=std(X);
+ X=(X-mu)/Std;
 end
