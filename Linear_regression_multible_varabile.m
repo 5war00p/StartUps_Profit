@@ -1,7 +1,6 @@
-dat=importdata('profit1.txt',',',1);
-R_Dspend=str2double(dat.textdata(:,1));
-Administration=str2double(dat.textdata(:,2));
-Marketing=str2double(dat.textdata(:,3));
-Spend=str2double(dat.textdata(:,4));
-State=dat.textdata(:,5);
-Profit=dat.data();
+dat=importdata('profit.txt',',',1);
+RDSpend = str2double(dat.textdata(2:end,1));
+AdminiSpend=str2double(dat.textdata(2:end,2));
+MarketingSpend=str2double(dat.textdata(2:end,3));
+SpendState = dat.textdata(2:end,4);
+Profit = dat.data();
